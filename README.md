@@ -2,23 +2,128 @@
 
 **Roadmap** de um desenvolvedor PHP (Laravel) para dominar Java com Spring Boot.
 
-## 🏗️ **1. ARQUITETURA JAVA: A JVM**
+> **Se você domina Laravel, este guia vai te ajudar a aprender Java traçando analogias diretas com o que você já conhece. Cada seção destaca o conceito equivalente no Laravel, para que você possa rapidamente mapear seu conhecimento e identificar as principais diferenças.**
+
+---
+
+## 📚 **GUIA DE ESTUDO ESTRUTURADO**
+
+Este guia foi dividido em capítulos organizados para facilitar seu aprendizado progressivo:
+
+### 🏗️ **Parte I: Fundamentos**
+- [x] [📖 **Capítulo 00: Configuração do Ambiente**](./_docs/book/00-environment-setup.md)
+- [x] [📖 **Capítulo 01: Ecossistema Java**](./_docs/book/01-java-ecosystem.md)
+- [x] [📖 **Capítulo 02: Ferramentas e Infraestrutura**](./_docs/book/02-tools-infrastructure.md)
+
+### ⚔️ **Parte II: Conhecimento Técnico**
+- [x] [📖 **Capítulo 03: Camada de Dados**](./_docs/book/03-data-layer.md)
+- [x] [📖 **Capítulo 04: Fundamentos Java**](./_docs/book/04-java-fundamentals.md)
+- [x] [📖 **Capítulo 05: Arquitetura e Fluxo**](./_docs/book/05-architecture.md)
+
+### 🌱 **Parte III: Spring Boot na Prática**
+- [x] [📖 **Capítulo 06: Spring Boot Essencial**](./_docs/book/06-spring-boot-basics.md)
+- [x] [📖 **Capítulo 07: Desafio Prático e Recursos**](./_docs/book/07-challenge-resources.md)
+
+---
+
+## 🎯 **CHECKLIST RÁPIDO**
+
+Antes de começar, certifique-se de que entende estes conceitos:
+
+- [ ] JDK ≠ JRE ≠ JVM (como engine PHP vs extensões vs ferramentas de dev)
+- [ ] Maven/Gradle gerenciam dependências (como Composer)
+- [ ] Tomcat é o servidor web embedado (como PHP-FPM ou built-in server)
+- [ ] JPA é spec, Hibernate é implementation (como contrato Eloquent vs classe)
+- [ ] Entity ≠ DTO (banco ≠ API resource)
+- [ ] Java SE é suficiente para Spring Boot (como PHP core é suficiente para Laravel)
+
+---
+
+## 🏮 **SABEDORIA INICIAL DO SENSEI**
+
+O ecossistema Java parece complexo porque **é robusto**. Cada camada resolve um problema específico de enterprise applications.
+
+**Não decore - compreenda:**
+- JDK é seu kit de ferramentas (como suas ferramentas de dev PHP)
+- Maven é seu gestor de pacotes (como Composer)
+- Tomcat é seu servidor (como PHP-FPM)
+- JPA é sua interface de banco (como Eloquent)
+- Spring é o framework que une tudo (como Laravel)
+
+---
+
+## 🎓 **COMO USAR ESTE GUIA**
+
+1. **Leia sequencialmente** - Cada capítulo constrói sobre o anterior
+2. **Pratique com analogias** - Compare cada conceito com Laravel
+3. **Não pule o ambiente** - Configure tudo antes de continuar
+4. **Faça o desafio** - A prática consolida o aprendizado
+5. **Volte quando necessário** - Use como referência
+
+---
+
+🥋 **BOM ESTUDO, DISCÍPULO!** O dojo aguarda seu progresso! 🐉
+
+---
+
+## 📂 **ESTRUTURA COMPLETA DO PROJETO**
+
+```
+devphp-to-devjava/
+├── README.md                           # Este arquivo (índice)
+├── README-EN-US.md                     # Versão em inglês
+├── PLANO-REVISAO.md                    # Plano personalizado de estudos
+├── _docs/
+│   ├── book/                          # Livro estruturado
+│   │   ├── 00-environment-setup.md    ✅
+│   │   ├── 01-java-ecosystem.md       ✅
+│   │   ├── 02-tools-infrastructure.md ✅
+│   │   ├── 03-data-layer.md           ✅
+│   │   ├── 04-java-fundamentals.md    ✅
+│   │   ├── 05-architecture.md         ✅
+│   │   ├── 06-spring-boot-basics.md   ✅
+│   │   └── 07-challenge-resources.md  ✅
+│   ├── HowToRunJavaOnWindows11WSL2.md
+│   └── JavaLearningDojo.md
+└── src/                               # Código + conceitos integrados
+    ├── HelloWorld.java                 # Primeiro exemplo
+    ├── Main.java                       # Template inicial
+    ├── PrimitiveTypes.java             # Tipos básicos
+    ├── CollectionsExample.java         # Collections vs PHP arrays
+    ├── OOPAdvancedExample.java         # OOP com analogias Laravel
+    ├── ExceptionHandlingExample.java   # Exception handling
+    └── concepts/                       # 🆕 GUIAS CONCEITUAIS
+        ├── README.md                   # Índice de navegação
+        ├── 01-Collections-Conceitual.md
+        ├── 02-OOP-Conceitual.md
+        ├── 03-Exception-Design.md
+        └── 04-Exercicios-Progressivos.md
+```
+
+---
+
+## 🎁 **VERSÕES DISPONÍVEIS**
+
+- **🇧🇷 Português:** [README.md](./README.md) *(esta página)*
+- **🇺🇸 English:** [README-EN-US.md](./README-EN-US.md) *(para praticar inglês)*
 
 ```
 [SEU CÓDIGO .java] → [COMPILADOR javac] → [BYTECODE .class] → [JVM] → [HARDWARE]
 ```
 
-**≠ PHP:** PHP é interpretado linha por linha. Java é compilado para bytecode que roda na JVM.
+**Analogia Laravel:**
+- PHP é interpretado linha por linha (Zend Engine), enquanto Java é compilado em bytecode e roda na JVM (Java Virtual Machine).
+- Pense na JVM como o "motor" que executa seu código Java, similar a como o PHP-FPM executa seus scripts PHP.
 
 ---
 
 ## 📦 **2. JDK vs JRE vs JVM**
 
-| Componente | Função | Analogia PHP |
-|------------|---------|--------------|
+| Componente | Função | Analogia Laravel/PHP |
+|------------|---------|---------------------|
 | **JVM** (Java Virtual Machine) | Executa bytecode | PHP-FPM + Zend Engine |
-| **JRE** (Java Runtime Environment) | JVM + Bibliotecas básicas | PHP + Extensões básicas |
-| **JDK** (Java Development Kit) | JRE + Ferramentas de desenvolvimento | PHP + Composer + Xdebug |
+| **JRE** (Java Runtime Environment) | JVM + Bibliotecas básicas | PHP + extensões básicas |
+| **JDK** (Java Development Kit) | JRE + Ferramentas de desenvolvimento (compilador, debugger) | PHP + Composer + Xdebug |
 
 ```bash
 # No seu WSL:
@@ -32,9 +137,13 @@ javac -version  # JDK (compilador)
 
 | Edição | Foco | Uso Comum |
 |--------|------|-----------|
-| **Java SE** (Standard Edition) | Desktop/Apps básicos | Aplicações Spring Boot |
-| **Java EE** (Enterprise Edition) | Sistemas corporativos | Aplicações bancárias |
+| **Java SE** (Standard Edition) | Desktop/Apps básicos | Aplicações Spring Boot (como apps Laravel) |
+| **Java EE** (Enterprise Edition) | Sistemas corporativos | Grandes aplicações corporativas (pense em bancos) |
 | **Java ME** (Micro Edition) | Dispositivos embarcados | IoT, celulares antigos |
+
+**Analogia Laravel:**
+- Java SE é como o PHP core que você usa na maioria dos projetos Laravel.
+- Java EE é como um framework PHP empresarial full-stack com todos os módulos possíveis.
 
 **Spring Boot ≡ Java SE com poderes empresariais**
 
@@ -42,19 +151,19 @@ javac -version  # JDK (compilador)
 
 ## 🐘 **4. TOMCAT vs APACHE**
 
-| Servidor | Função | Analogia PHP |
-|----------|---------|--------------|
-| **Tomcat** | Servlet Container | PHP-FPM + Nginx |
-| **Jetty** | Servlet Container leve | PHP built-in server |
-| **WildFly** | Full Java EE Server | Apache + PHP + Todos módulos |
+| Servidor | Função | Analogia Laravel/PHP |
+|----------|---------|---------------------|
+| **Tomcat** | Servlet Container | PHP-FPM + Nginx (executa o código da sua app) |
+| **Jetty** | Servlet Container leve | PHP built-in server (para dev) |
+| **WildFly** | Full Java EE Server | Apache + PHP + todos os módulos |
 
-**Spring Boot:** Usa Tomcat **embedado** - você não instala separadamente!
+**Spring Boot:** Usa Tomcat **embedado** - você não instala separadamente! Assim como o servidor built-in do Laravel para desenvolvimento, mas também para produção.
 
 ---
 
 ## 📦 **5. MAVEN vs GRADLE**
 
-### **Maven (XML) ≡ Composer**
+### **Maven (XML) ≈ Composer (PHP)**
 ```xml
 <!-- pom.xml -->
 <dependencies>
@@ -66,7 +175,7 @@ javac -version  # JDK (compilador)
 </dependencies>
 ```
 
-### **Gradle (Kotlin/Groovy) ≡ Composer + Make**
+### **Gradle (Kotlin/Groovy) ≈ Composer + Make**
 ```kotlin
 // build.gradle.kts
 dependencies {
@@ -74,7 +183,11 @@ dependencies {
 }
 ```
 
-**Dica:** Comece com **Maven** (mais documentação).
+**Analogia Laravel:**
+- Maven é como o Composer para PHP: gerencia dependências e estrutura do projeto.
+- Gradle é como Composer + uma ferramenta de build (como Make ou Gulp).
+
+**Dica:** Comece com **Maven** (mais documentação, mais fácil para iniciantes).
 
 ---
 
@@ -93,7 +206,7 @@ Java é governado por **JSRs** (Java Specification Requests):
 
 ## 🗃️ **7. ORM: JPA vs HIBERNATE**
 
-### **JPA (Specification) ≡ Interface**
+### **JPA (Specification) ≈ Interface (contrato do Eloquent)**
 ```java
 @Entity
 public class User {
@@ -103,11 +216,14 @@ public class User {
 }
 ```
 
-### **Hibernate (Implementation) ≡ Classe concreta**
+### **Hibernate (Implementation) ≈ Classe concreta**
 ```java
-// Hibernate É a implementação mais popular da JPA
+// Hibernate é a implementação mais popular da JPA
 // Spring Boot usa Hibernate por padrão
 ```
+
+**Analogia Laravel:**
+- JPA é como a interface do Eloquent ORM (o contrato), e Hibernate é como a implementação real do Eloquent.
 
 **Outras implementações:** EclipseLink, OpenJPA
 
@@ -126,8 +242,12 @@ public class User {
 
 // DTO (API Response)
 public record UserDTO(Long id, String name) {}
-// ≡ class com getters, equals, hashCode
+// ≈ class com getters, equals, hashCode
 ```
+
+**Analogia Laravel:**
+- Entity = Eloquent Model (banco de dados)
+- DTO = Resource/Transformer (resposta da API)
 
 **Por que usar?**
 - Segurança (esconder campos sensíveis)
@@ -144,18 +264,21 @@ HTTP Request → Tomcat → DispatcherServlet → Controller → Service → Rep
                                                           Response → JSON
 ```
 
+**Analogia Laravel:**
+- Request → Nginx/Apache → index.php → Route → Controller → Service → Model → Database
+
 ---
 
 ## 📊 **10. TECNOLOGIAS COMUNS NO ECOSSISTEMA**
 
-| Camada | Tecnologias Comuns |
-|--------|---------------------|
-| **Build** | Maven, Gradle |
-| **Web** | Spring MVC, Jersey |
-| **Data** | JPA/Hibernate, JDBC, Spring Data |
-| **Security** | Spring Security, JWT |
-| **Testing** | JUnit, Mockito, Testcontainers |
-| **Deploy** | Docker, Kubernetes, JAR → Cloud |
+| Camada | Tecnologias Comuns | Analogia Laravel |
+|--------|---------------------|-----------------|
+| **Build** | Maven, Gradle | Composer |
+| **Web** | Spring MVC, Jersey | Routing, Controllers |
+| **Data** | JPA/Hibernate, JDBC, Spring Data | Eloquent ORM |
+| **Security** | Spring Security, JWT | Laravel Auth, Sanctum |
+| **Testing** | JUnit, Mockito, Testcontainers | PHPUnit, Mockery |
+| **Deploy** | Docker, Kubernetes, JAR → Cloud | Docker, Forge |
 
 ---
 
@@ -163,12 +286,12 @@ HTTP Request → Tomcat → DispatcherServlet → Controller → Service → Rep
 
 Entenda estes conceitos antes de prosseguir:
 
-- [ ] JDK ≠ JRE ≠ JVM
-- [ ] Maven/Gradle gerenciam dependências
-- [ ] Tomcat é o servidor web embedado
-- [ ] JPA é spec, Hibernate é implementation
-- [ ] Entity ≠ DTO (banco ≠ API)
-- [ ] Java SE é suficiente para Spring Boot
+- [ ] JDK ≠ JRE ≠ JVM (como engine PHP vs extensões vs ferramentas de dev)
+- [ ] Maven/Gradle gerenciam dependências (como Composer)
+- [ ] Tomcat é o servidor web embedado (como PHP-FPM ou built-in server)
+- [ ] JPA é spec, Hibernate é implementation (como contrato Eloquent vs classe)
+- [ ] Entity ≠ DTO (banco ≠ API resource)
+- [ ] Java SE é suficiente para Spring Boot (como PHP core é suficiente para Laravel)
 
 ---
 
@@ -177,11 +300,11 @@ Entenda estes conceitos antes de prosseguir:
 O ecossistema Java parece complexo porque **é robusto**. Cada camada resolve um problema específico de enterprise applications.
 
 **Não decore - compreenda:**
-- JDK é seu kit de ferramentas
-- Maven é seu gestor de pacotes
-- Tomcat é seu servidor
-- JPA é sua interface de banco
-- Spring é o framework que une tudo
+- JDK é seu kit de ferramentas (como suas ferramentas de dev PHP)
+- Maven é seu gestor de pacotes (como Composer)
+- Tomcat é seu servidor (como PHP-FPM)
+- JPA é sua interface de banco (como Eloquent)
+- Spring é o framework que une tudo (como Laravel)
 
 --- 
 
@@ -298,16 +421,20 @@ String nome = "João";
 List<String> emails = new ArrayList<>();
 ```
 
+### **Analogia Laravel:**
+- Primitivos são como int, float, bool do PHP, mas Java é sempre explícito.
+- Objetos são como classes do PHP, mas com tipagem rigorosa.
+
 ### **4.2 Estruturas de Controle**
 ```java
-// If/Else (≠ PHP)
+// If/Else (diferente do PHP)
 if (idade >= 18) {
     System.out.println("Maior de idade");
 } else {
     System.out.println("Menor de idade");
 }
 
-// For loop (≠ foreach PHP)
+// For loop (diferente do foreach PHP)
 for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
@@ -326,7 +453,7 @@ public class User {
     private String name;
     private List<String> emails;
     
-    // Construtor (≠ __construct)
+    // Construtor (diferente do __construct)
     public User(String name) {
         this.name = name;
         this.emails = new ArrayList<>();
@@ -339,11 +466,15 @@ public class User {
         }
     }
     
-    // Getters (≠ propriedades públicas)
+    // Getters (diferente de propriedades públicas)
     public String getName() { return name; }
     public List<String> getEmails() { return emails; }
 }
 ```
+
+### **Analogia Laravel:**
+- Classes Java são como classes PHP, mas com visibilidade rigorosa e tipos.
+- Getters/setters são obrigatórios para encapsulamento.
 
 ### **4.4 Collections e Streams**
 ```java
@@ -351,7 +482,7 @@ public class User {
 String[] array = {"a", "b"}; // Array fixo
 List<String> list = new ArrayList<>(); // Lista dinâmica
 
-// Stream API (≡ Laravel Collections)
+// Stream API (como Laravel Collections)
 List<String> filtrados = list.stream()
     .filter(nome -> nome.startsWith("A"))
     .sorted()
@@ -373,37 +504,44 @@ src/main/java/com/dojo/
 └── dto/
 ```
 
+**Analogia Laravel:**
+- `controller/` = `app/Http/Controllers/`
+- `entity/` = `app/Models/`
+- `repository/` = `app/Repositories/` (se você usa)
+- `service/` = `app/Services/`
+- `dto/` = `app/Http/Resources/` ou Transformers
+
 ### **5.2 Controller Básico**
 ```java
-@RestController // ≡ Laravel Controller
+@RestController // ≈ Laravel Controller
 @RequestMapping("/api/users")
 public class UserController {
 
-    @Autowired // ≡ Injeção de dependência
+    @Autowired // ≈ Injeção de dependência
     private UserRepository userRepository;
     
-    @GetMapping // ≡ Route::get()
+    @GetMapping // ≈ Route::get()
     public List<User> getAll() {
-        return userRepository.findAll(); // ≡ User::all()
+        return userRepository.findAll(); // ≈ User::all()
     }
     
     @PostMapping
     public User create(@RequestBody User user) {
-        return userRepository.save(user); // ≡ User::create()
+        return userRepository.save(user); // ≈ User::create()
     }
 }
 ```
 
 ### **5.3 Entidade JPA**
 ```java
-@Entity // ≡ Eloquent Model
+@Entity // ≈ Eloquent Model
 @Table(name = "users")
 public class User {
-    @Id // ≡ $primaryKey
+    @Id // ≈ $primaryKey
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(nullable = false) // ≡ $fillable
+    @Column(nullable = false) // ≈ $fillable
     private String name;
     
     // Getters e Setters
@@ -418,9 +556,9 @@ public class User {
 Recrie em Java/Spring Boot um CRUD que você já fez em Laravel (ex: Blog, Todo App).
 
 **Requisitos:**
-- [ ] Entidade com 3+ atributos
+- [ ] Entidade com 3+ atributos (como um Model)
 - [ ] Controller com GET, POST, PUT, DELETE
-- [ ] Validações básicas
+- [ ] Validações básicas (como FormRequest)
 - [ ] Repository com 1 método custom
 - [ ] Teste manual via Postman
 
