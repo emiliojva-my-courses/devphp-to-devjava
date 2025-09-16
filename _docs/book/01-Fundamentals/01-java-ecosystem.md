@@ -184,7 +184,7 @@ composer --version  # Seu Composer
 
 Agora que você entende a base do ecossistema Java, vamos conhecer as ferramentas que você usará no dia a dia:
 
-**Próximo:** [Capítulo 02: Ferramentas e Infraestrutura](./02-tools-infrastructure.md)
+**Próximo:** [Capítulo 02: Ferramentas e Infraestrutura](02-tools-infrastructure.md)
 
 ---
 

@@ -1,3 +1,5 @@
+package fundamentals.examples;
+
 import java.io.*;
 import java.util.*;
 
@@ -134,10 +136,10 @@ class ServicoBancario {
         System.out.println(String.format("🔄 Transferindo R$ %.2f de %s para %s", 
                                         valor, origem.getTitular(), destino.getTitular()));
         
-        // Pode lançar SaldoInsuficienteException (unchecked)
+        // Pode lançar fundamentals.SaldoInsuficienteException (unchecked)
         origem.sacar(valor);
         
-        // Pode lançar UsuarioInvalidoException (checked)
+        // Pode lançar fundamentals.UsuarioInvalidoException (checked)
         destino.depositar(valor);
         
         System.out.println("✅ Transferência concluída!");
@@ -197,7 +199,7 @@ public class ExceptionHandlingExample {
     private static void demonstrarCheckedExceptions(ServicoBancario servico) {
         System.out.println("✅ 1. CHECKED EXCEPTIONS (obrigatório tratar)");
         System.out.println("PHP: try { ... } catch (Exception $e) { ... }");
-        System.out.println("Java: try { ... } catch (UsuarioInvalidoException e) { ... }\n");
+        System.out.println("Java: try { ... } catch (fundamentals.UsuarioInvalidoException e) { ... }\n");
         
         try {
             // Tentativa 1: Dados válidos

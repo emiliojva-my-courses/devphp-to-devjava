@@ -1,3 +1,5 @@
+package fundamentals.exercises;
+
 /**
  * Exercise 1: Primitive Types in Java
  * <p>

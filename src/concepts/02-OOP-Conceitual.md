@@ -95,7 +95,7 @@ public class Usuario {
 #### **🏆 BOAS PRÁTICAS**
 ```java
 // ✅ BOM: Encapsulamento completo
-public class ContaBancaria {
+public class fundamentals.ContaBancaria {
     private BigDecimal saldo;           // Nunca público
     private List<Transacao> historico;  // Coleção protegida
     
@@ -285,7 +285,7 @@ public interface RepositorioUsuario {
 }
 
 // Implementação específica (escondida do cliente)
-@Repository
+@ObjectOrientedProgramming.Repository
 public class RepositorioUsuarioJPA implements RepositorioUsuario {
     @Autowired
     private EntityManager entityManager;
@@ -362,7 +362,7 @@ public class Usuario {
     // Apenas dados e comportamentos essenciais do usuário
 }
 
-@Repository
+@ObjectOrientedProgramming.Repository
 public class RepositorioUsuario {
     // Apenas persistência
 }
@@ -721,7 +721,7 @@ public class ConfiguradorConta {
 - [ ] **Strategy**: Para algoritmos intercambiáveis
 - [ ] **Observer**: Para sistemas de eventos
 - [ ] **Builder**: Para objetos com muitos parâmetros
-- [ ] **Repository**: Para abstração de persistência
+- [ ] **ObjectOrientedProgramming.Repository**: Para abstração de persistência
 
 ---
 

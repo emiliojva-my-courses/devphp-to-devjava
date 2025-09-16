@@ -1,4 +1,4 @@
-/**
+package ObjectOrientedProgramming; /**
  * 🏗️ OOP Avançado: PHP vs Java
  * 
  * Este exemplo mostra como implementar OOP robusto em Java,
@@ -15,7 +15,7 @@
  * 📋 INTERFACE: Como PHP Interface
  * 
  * PHP: interface RepositorioInterface { ... }
- * Java: public interface Repository<T> { ... }
+ * Java: public interface ObjectOrientedProgramming.Repository<T> { ... }
  */
 interface Repository<T> {
     void save(T entity);
@@ -42,8 +42,8 @@ interface Validatable {
 /**
  * 👤 PESSOA: Classe base abstrata
  * 
- * PHP: abstract class Pessoa { ... }
- * Java: public abstract class Pessoa { ... }
+ * PHP: abstract class ObjectOrientedProgramming.Pessoa { ... }
+ * Java: public abstract class ObjectOrientedProgramming.Pessoa { ... }
  */
 abstract class Pessoa implements Validatable {
     protected String nome;
@@ -97,10 +97,10 @@ abstract class Pessoa implements Validatable {
 // ==========================================
 
 /**
- * 👨‍💻 DESENVOLVEDOR: Especialização de Pessoa
+ * 👨‍💻 DESENVOLVEDOR: Especialização de ObjectOrientedProgramming.Pessoa
  * 
- * PHP: class Desenvolvedor extends Pessoa { ... }
- * Java: public class Desenvolvedor extends Pessoa { ... }
+ * PHP: class ObjectOrientedProgramming.Desenvolvedor extends ObjectOrientedProgramming.Pessoa { ... }
+ * Java: public class ObjectOrientedProgramming.Desenvolvedor extends ObjectOrientedProgramming.Pessoa { ... }
  */
 class Desenvolvedor extends Pessoa {
     private String linguagemPrincipal;
@@ -116,7 +116,7 @@ class Desenvolvedor extends Pessoa {
     
     @Override
     public String getTipo() {
-        return "Desenvolvedor " + linguagemPrincipal;
+        return "ObjectOrientedProgramming.Desenvolvedor " + linguagemPrincipal;
     }
     
     // Método específico desta classe
@@ -146,7 +146,7 @@ class Desenvolvedor extends Pessoa {
 }
 
 /**
- * 👩‍💼 GERENTE: Outra especialização de Pessoa
+ * 👩‍💼 GERENTE: Outra especialização de ObjectOrientedProgramming.Pessoa
  */
 class Gerente extends Pessoa {
     private String departamento;
@@ -160,7 +160,7 @@ class Gerente extends Pessoa {
     
     @Override
     public String getTipo() {
-        return "Gerente de " + departamento;
+        return "ObjectOrientedProgramming.Gerente de " + departamento;
     }
     
     public String getInfoCompleta() {
@@ -179,7 +179,7 @@ class Gerente extends Pessoa {
 /**
  * 🗄️ REPOSITORY: Implementação concreta
  * 
- * Como um Eloquent Model ou Repository Pattern do Laravel
+ * Como um Eloquent Model ou ObjectOrientedProgramming.Repository Pattern do Laravel
  */
 class PessoaRepository implements Repository<Pessoa> {
     private java.util.List<Pessoa> pessoas = new java.util.ArrayList<>();
@@ -210,7 +210,7 @@ class PessoaRepository implements Repository<Pessoa> {
     public void delete(Long id) {
         logOperation("DELETE - " + id);
         // Implementação simplificada
-        System.out.println("🗑️ Pessoa com ID " + id + " removida");
+        System.out.println("🗑️ ObjectOrientedProgramming.Pessoa com ID " + id + " removida");
     }
     
     // Métodos extras (como Query Scopes do Laravel)
@@ -254,8 +254,8 @@ public class OOPAdvancedExample {
      */
     private static void demonstrarHeranca(PessoaRepository repository) {
         System.out.println("🧬 1. HERANÇA (extends)");
-        System.out.println("PHP: class Desenvolvedor extends Pessoa");
-        System.out.println("Java: class Desenvolvedor extends Pessoa\n");
+        System.out.println("PHP: class ObjectOrientedProgramming.Desenvolvedor extends ObjectOrientedProgramming.Pessoa");
+        System.out.println("Java: class ObjectOrientedProgramming.Desenvolvedor extends ObjectOrientedProgramming.Pessoa\n");
         
         // Criando objetos de classes filhas
         Desenvolvedor dev1 = new Desenvolvedor("João", 28, "joao@email.com", "Java", 3, 5500.00);
@@ -277,7 +277,7 @@ public class OOPAdvancedExample {
         System.out.println("🎭 2. POLIMORFISMO (mesmo método, comportamentos diferentes)");
         System.out.println("Método getTipo() tem implementação diferente em cada classe:\n");
         
-        // Polimorfismo: mesma referência (Pessoa), comportamentos diferentes
+        // Polimorfismo: mesma referência (ObjectOrientedProgramming.Pessoa), comportamentos diferentes
         java.util.List<Pessoa> todasPessoas = repository.findAll();
         
         for (Pessoa pessoa : todasPessoas) {
@@ -324,7 +324,7 @@ public class OOPAdvancedExample {
      */
     private static void demonstrarInterface(PessoaRepository repository) {
         System.out.println("📋 4. INTERFACES (contratos)");
-        System.out.println("Repository implementa interface Repository<Pessoa>:\n");
+        System.out.println("ObjectOrientedProgramming.Repository implementa interface ObjectOrientedProgramming.Repository<ObjectOrientedProgramming.Pessoa>:\n");
         
         // Busca específica usando método customizado
         java.util.List<Desenvolvedor> devsJava = repository.findDesenvolvedoresByLinguagem("Java");

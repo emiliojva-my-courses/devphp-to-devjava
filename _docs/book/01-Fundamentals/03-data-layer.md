@@ -234,7 +234,7 @@ $users = User::where('created_at', '>', '2023-01-01')
 
 ### **Spring Data JPA:**
 ```java
-// Repository interface (como Eloquent automático)
+// ObjectOrientedProgramming.Repository interface (como Eloquent automático)
 public interface UserRepository extends JpaRepository<User, Long> {
     
     // Query methods (Spring gera SQL automaticamente)

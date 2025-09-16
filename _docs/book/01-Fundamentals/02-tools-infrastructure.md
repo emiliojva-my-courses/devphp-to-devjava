@@ -310,7 +310,7 @@ find . -name "composer.json" -o -name "*.php" | head -10
 
 Agora que você domina as ferramentas, vamos entender como o Java lida com dados:
 
-**Próximo:** [Capítulo 03: Camada de Dados](./03-data-layer.md)
+**Próximo:** [Capítulo 03: Camada de Dados](03-data-layer.md)
 
 ---
 

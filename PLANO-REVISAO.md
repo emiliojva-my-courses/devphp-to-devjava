@@ -73,12 +73,12 @@ public class User {
 public record UserDTO(Long id, String name, String email) {}
 ```
 
-#### **🔍 Repository Pattern:**
+#### **🔍 ObjectOrientedProgramming.Repository Pattern:**
 ```php
 // Laravel: Eloquent direto
 $users = User::where('active', true)->get();
 
-// Java: Repository interface
+// Java: ObjectOrientedProgramming.Repository interface
 public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByActiveTrue();
 }
@@ -94,7 +94,7 @@ Laravel:
 Request → Router → Controller → Service → Model → DB
 
 Spring Boot:
-Request → @RestController → @Service → @Repository → Entity → DB
+Request → @RestController → @Service → @ObjectOrientedProgramming.Repository → Entity → DB
 ```
 
 #### **📋 Anotações principais:**
@@ -102,7 +102,7 @@ Request → @RestController → @Service → @Repository → Entity → DB
 |---------|-------------|---------|
 | Route::get() | @GetMapping | Mapear endpoint |
 | Service class | @Service | Lógica de negócio |
-| Repository | @Repository | Acesso dados |
+| ObjectOrientedProgramming.Repository | @ObjectOrientedProgramming.Repository | Acesso dados |
 | Model | @Entity | Mapeamento DB |
 
 ---
@@ -113,7 +113,7 @@ Request → @RestController → @Service → @Repository → Entity → DB
 ```bash
 cd /home/emilio/apps/learning/java/devphp-to-devjava/src
 javac --version  # Funciona?
-java PrimitiveTypes  # Seus exemplos rodam?
+java fundamentals.exercises.PrimitiveTypes  # Seus exemplos rodam?
 ```
 
 ### **2. 📖 LEIA OS CAPÍTULOS ESTRATÉGICOS (30 min)**
@@ -141,12 +141,12 @@ Antes de partir para Spring Boot, confirme que entende:
 ### **🗃️ Dados:**
 - [ ] Entity vs DTO (Model vs Resource)
 - [ ] JPA vs Hibernate vs Spring Data
-- [ ] Repository pattern
+- [ ] ObjectOrientedProgramming.Repository pattern
 
 ### **🏗️ Arquitetura:**
 - [ ] @RestController vs Laravel Controller
 - [ ] @Service vs Laravel Service
-- [ ] @Repository vs Laravel Repository
+- [ ] @ObjectOrientedProgramming.Repository vs Laravel ObjectOrientedProgramming.Repository
 - [ ] Fluxo de requisição completo
 
 ---

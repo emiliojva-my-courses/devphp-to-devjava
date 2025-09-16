@@ -245,7 +245,7 @@ Agora que seu ambiente está configurado:
 4. ✅ IDE configurada
 5. ✅ Primeiro projeto criado
 
-**Próximo capítulo:** [Capítulo 01: Ecossistema Java](./01-java-ecosystem.md)
+**Próximo capítulo:** [Capítulo 01: Ecossistema Java](01-java-ecosystem.md)
 
 ---
 

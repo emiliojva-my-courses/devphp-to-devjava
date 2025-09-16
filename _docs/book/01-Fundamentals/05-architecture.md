@@ -21,7 +21,7 @@ HTTP Request → Nginx/Apache → index.php → Kernel → Middleware → Router
 
 ### **Spring Boot Request Flow:**
 ```
-HTTP Request → Tomcat → DispatcherServlet → Interceptor → Controller → Service → Repository → Database
+HTTP Request → Tomcat → DispatcherServlet → Interceptor → Controller → Service → ObjectOrientedProgramming.Repository → Database
                                                                           ↓
                                                                       Response ← JSON/View
 ```
@@ -36,7 +36,7 @@ HTTP Request → Tomcat → DispatcherServlet → Interceptor → Controller →
 | **Routing** | Route::get() | @GetMapping | Mapeia URL para método |
 | **Controller** | Controller | @RestController | Lógica de apresentação |
 | **Business Logic** | Service/Action | @Service | Regras de negócio |
-| **Data Access** | Eloquent Model | @Repository | Acesso aos dados |
+| **Data Access** | Eloquent Model | @ObjectOrientedProgramming.Repository | Acesso aos dados |
 | **Response** | JSON/Blade | JSON/Thymeleaf | Resposta formatada |
 
 ---
@@ -65,7 +65,7 @@ HTTP Request → Tomcat → DispatcherServlet → Interceptor → Controller →
 ├─────────────────┤
 │    @Service     │ ← Lógica de negócio
 ├─────────────────┤
-│   @Repository   │ ← Acesso aos dados (JPA)
+│   @ObjectOrientedProgramming.Repository   │ ← Acesso aos dados (JPA)
 ├─────────────────┤
 │    @Entity      │ ← Mapeamento de dados
 ├─────────────────┤
@@ -139,7 +139,7 @@ public class UserController {
 #### **🗃️ Data Layer**
 ```java
 // Spring Data JPA ≈ Eloquent
-@Repository
+@ObjectOrientedProgramming.Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     // ≈ User::where('active', true)->get()
     List<User> findByActiveTrue();
@@ -261,7 +261,7 @@ public class User {
 }
 
 // UserRepository.java
-@Repository
+@ObjectOrientedProgramming.Repository
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
 }
@@ -395,7 +395,7 @@ Mapear um projeto Laravel existente para Spring Boot:
 
 Agora que você entende a arquitetura, vamos colocar a mão na massa:
 
-**Próximo:** [Capítulo 06: Spring Boot na Prática](./06-spring-boot-basics.md)
+**Próximo:** [Capítulo 06: Spring Boot na Prática](../03-SpringBoot/06-spring-boot-basics.md)
 
 ---
 

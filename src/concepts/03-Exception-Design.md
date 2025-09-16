@@ -73,12 +73,12 @@ Throwable (nunca capturar diretamente)
 
 ```java
 // ✅ BOM: Condição recuperável esperada
-public class ContaBancaria {
+public class fundamentals.ContaBancaria {
     
-    public void sacar(BigDecimal valor) throws SaldoInsuficienteException {
+    public void sacar(BigDecimal valor) throws fundamentals.SaldoInsuficienteException {
         if (valor.compareTo(saldo) > 0) {
             // Condição esperada que pode ser recuperada
-            throw new SaldoInsuficienteException(
+            throw new fundamentals.SaldoInsuficienteException(
                 String.format("Saldo insuficiente. Disponível: %s, Solicitado: %s", 
                              saldo, valor)
             );
@@ -91,7 +91,7 @@ public class ContaBancaria {
 try {
     conta.sacar(new BigDecimal("1000"));
     exibirSucesso("Saque realizado");
-} catch (SaldoInsuficienteException e) {
+} catch (fundamentals.SaldoInsuficienteException e) {
     // Recuperação: oferecer opções ao usuário
     exibirOpcoes("Saldo insuficiente", Arrays.asList(
         "Sacar valor disponível: " + conta.getSaldo(),
@@ -120,11 +120,11 @@ public abstract class ContaException extends Exception {
     // Getters...
 }
 
-public class SaldoInsuficienteException extends ContaException {
+public class fundamentals.SaldoInsuficienteException extends ContaException {
     private final BigDecimal saldoDisponivel;
     private final BigDecimal valorSolicitado;
     
-    public SaldoInsuficienteException(String codigoConta, BigDecimal disponivel, BigDecimal solicitado) {
+    public fundamentals.SaldoInsuficienteException(String codigoConta, BigDecimal disponivel, BigDecimal solicitado) {
         super(String.format("Saldo insuficiente na conta %s", codigoConta), codigoConta);
         this.saldoDisponivel = disponivel;
         this.valorSolicitado = solicitado;

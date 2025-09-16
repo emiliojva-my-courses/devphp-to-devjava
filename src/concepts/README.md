@@ -22,7 +22,7 @@
 | **Collections** | [📚 Conceitual](./01-Collections-Conceitual.md) | [🎯 Exercícios](./04-Exercicios-Progressivos.md#bronze-1) | [📖 Cap 04](../_docs/book/04-java-fundamentals.md#4-collections) | [🌱 Cap 06](../_docs/book/06-spring-boot-basics.md) |
 | **OOP Avançado** | [🏗️ Conceitual](./02-OOP-Conceitual.md) | [🎯 Exercícios](./04-Exercicios-Progressivos.md#bronze-2) | [📖 Cap 04](../_docs/book/04-java-fundamentals.md#3-orientacao-a-objetos) | [🏛️ Cap 05](../_docs/book/05-architecture.md) |
 | **Exceptions** | [🚨 Design](./03-Exception-Design.md) | [🎯 Exercícios](./04-Exercicios-Progressivos.md#bronze-3) | [📖 Cap 04](../_docs/book/04-java-fundamentals.md#5-exception-handling) | [🌱 Global Handler](../_docs/book/06-spring-boot-basics.md#exception-handling) |
-| **Stream API** | [📚 Conceitual](./01-Collections-Conceitual.md#stream-api) | [🔄 Integração](./04-Exercicios-Progressivos.md#prata) | [📖 Cap 04](../_docs/book/04-java-fundamentals.md#4-collections) | [🌱 Repository](../_docs/book/06-spring-boot-basics.md#repository) |
+| **Stream API** | [📚 Conceitual](./01-Collections-Conceitual.md#stream-api) | [🔄 Integração](./04-Exercicios-Progressivos.md#prata) | [📖 Cap 04](../_docs/book/04-java-fundamentals.md#4-collections) | [🌱 ObjectOrientedProgramming.Repository](../_docs/book/06-spring-boot-basics.md#repository) |
 
 ---
 
@@ -118,7 +118,7 @@ Map<String, String> mapa = new HashMap<>();
 #### **🎯 Decisão Checked vs Unchecked:**
 ```java
 // ✅ Checked: Condições recuperáveis
-public void sacar(BigDecimal valor) throws SaldoInsuficienteException
+public void sacar(BigDecimal valor) throws fundamentals.SaldoInsuficienteException
 
 // ✅ Unchecked: Erros de programação  
 if (valor == null) throw new IllegalArgumentException("Valor não pode ser null")

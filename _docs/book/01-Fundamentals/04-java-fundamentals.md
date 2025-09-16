@@ -49,7 +49,7 @@ Double precoObj = 29.99;        // Pode ser null
 | **Null** | `null` funciona sempre | Só objetos podem ser `null` |
 | **Arrays** | `$arr = []` | `String[] arr = {}` (tipado) |
 
-### **1.2 Constantes**
+### **1.2 Constantes** ✅ **DOMINADO**
 
 **PHP:**
 ```php
@@ -59,7 +59,7 @@ const MAX_USERS = 100;
 
 **Java:**
 ```java
-// Constantes de classe
+// Constantes de classe (recomendado)
 public static final String API_URL = "https://api.exemplo.com";
 public static final int MAX_USERS = 100;
 
@@ -67,11 +67,37 @@ public static final int MAX_USERS = 100;
 final String nome = "João"; // Como const no JavaScript
 ```
 
+#### **🎯 Convenções de Nomenclatura:**
+
+| Tipo | PHP | Java |
+|------|-----|------|
+| **Constantes** | `UPPER_CASE` | `UPPER_CASE` (igual!) |
+| **Declaração** | `define()` ou `const` | `static final` |
+| **Escopo** | Global ou classe | Classe (static) |
+
+#### **💡 Exemplo Prático Implementado:**
+```java
+// Ver: src/fundamentals/Constants.java
+public static final int IDADE_VOTO = 16;
+public static final int IDADE_ADULTO = 65;
+
+// Uso em condicionais
+if (idade >= IDADE_VOTO) {
+    println("Pode votar");
+}
+```
+
+#### **🚀 Conceitos Avançados Aplicados:**
+- **Switch expressions (Java 14+)** com múltiplos cases
+- **LocalDate API** para manipulação moderna de datas
+- **Package organization** com `fundamentals.*`
+- **Static imports** para código mais limpo
+
 ---
 
 ## 🔄 **2. ESTRUTURAS DE CONTROLE**
 
-### **2.1 Condicionais**
+### **2.1 Condicionais** ✅ **DOMINADO**
 
 **PHP:**
 ```php
@@ -91,13 +117,52 @@ $status = $ativo ? "Ativo" : "Inativo";
 ```java
 if (idade >= 18) {
     System.out.println("Maior de idade");
-} else if (idade >= 16) {
+} else if (idade >= 16) {  // Nota: "else if", não "elseif"
     System.out.println("Pode votar");
 } else {
     System.out.println("Menor de idade");
 }
 
 // Operador ternário
+String status = ativo ? "Ativo" : "Inativo";
+
+// Switch statement (com break obrigatório)
+switch (diaSemana) {
+    case 1:
+        System.out.println("Segunda-feira");
+        break;  // OBRIGATÓRIO! (diferente do PHP)
+    case 2:
+        System.out.println("Terça-feira");
+        break;
+    case 6:
+    case 7:
+        System.out.println("Final de semana");
+        break;
+    default:
+        System.out.println("Dia inválido");
+}
+```
+
+#### **🎯 Principais Diferenças Java vs PHP - Condicionais:**
+
+| Aspecto | PHP | Java |
+|---------|-----|------|
+| **else if** | `elseif` (uma palavra) | `else if` (duas palavras) |
+| **Variáveis** | `$variavel` | `variavel` (sem $) |
+| **switch break** | Opcional | **OBRIGATÓRIO** |
+| **Boolean** | `true`/`false`/`1`/`0` | Apenas `true`/`false` |
+| **Operadores** | `&&`, `\|\|`, `and`, `or` | Apenas `&&`, `\|\|` |
+
+#### **💡 Exemplo Prático Implementado:**
+```java
+// Ver: src/fundamentals.ConditionalStructures.java
+// ✅ Sistema de classificação de idade
+// ✅ Calculadora com switch
+// ✅ Validações com operadores lógicos
+// ✅ Ternary operator examples
+```
+
+---
 String status = ativo ? "Ativo" : "Inativo";
 
 // Switch moderno (Java 14+)
@@ -221,7 +286,7 @@ Usuario user = new Usuario("João", "joao@email.com");
 
 **PHP:**
 ```php
-class Pessoa {
+class ObjectOrientedProgramming.Pessoa {
     protected $nome;
     
     public function __construct($nome) {
@@ -233,7 +298,7 @@ class Pessoa {
     }
 }
 
-class Desenvolvedor extends Pessoa {
+class ObjectOrientedProgramming.Desenvolvedor extends ObjectOrientedProgramming.Pessoa {
     private $linguagem;
     
     public function __construct($nome, $linguagem) {
@@ -250,10 +315,10 @@ class Desenvolvedor extends Pessoa {
 **Java:**
 ```java
 // Classe pai
-public class Pessoa {
+public class ObjectOrientedProgramming.Pessoa {
     protected String nome;
     
-    public Pessoa(String nome) {
+    public ObjectOrientedProgramming.Pessoa(String nome) {
         this.nome = nome;
     }
     
@@ -263,10 +328,10 @@ public class Pessoa {
 }
 
 // Classe filha
-public class Desenvolvedor extends Pessoa {
+public class ObjectOrientedProgramming.Desenvolvedor extends ObjectOrientedProgramming.Pessoa {
     private String linguagem;
     
-    public Desenvolvedor(String nome, String linguagem) {
+    public ObjectOrientedProgramming.Desenvolvedor(String nome, String linguagem) {
         super(nome); // Chama construtor da classe pai
         this.linguagem = linguagem;
     }
@@ -593,7 +658,7 @@ List<Produto> produtos = new ArrayList<>();
 
 Agora que você domina Java básico (equivalente ao PHP puro), vamos ver como tudo se conecta:
 
-**Próximo:** [Capítulo 05: Arquitetura e Fluxo](./05-architecture.md)
+**Próximo:** [Capítulo 05: Arquitetura e Fluxo](05-architecture.md)
 
 ---
 

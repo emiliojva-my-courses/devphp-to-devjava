@@ -233,7 +233,7 @@ public abstract class ContaException extends Exception {
 }
 
 // Exceções específicas (checked - condições recuperáveis)
-public class SaldoInsuficienteException extends ContaException {
+public class fundamentals.SaldoInsuficienteException extends ContaException {
     private final BigDecimal saldoAtual;
     private final BigDecimal valorSolicitado;
     
@@ -259,7 +259,7 @@ public class OperacaoInvalidaException extends RuntimeException {
 
 #### **📋 EXERCÍCIO 3.2: Sistema de Conta**
 ```java
-public class ContaBancaria {
+public class fundamentals.ContaBancaria {
     private String numero;
     private BigDecimal saldo;
     private boolean bloqueada = false;
@@ -268,23 +268,23 @@ public class ContaBancaria {
         // TODO: Implementar validações com exceptions apropriadas
         // 1. Valor deve ser positivo (RuntimeException)
         // 2. Conta não pode estar bloqueada (ContaBloqueadaException)
-        // 3. Saldo deve ser suficiente (SaldoInsuficienteException)
+        // 3. Saldo deve ser suficiente (fundamentals.SaldoInsuficienteException)
     }
     
-    public void transferir(ContaBancaria destino, BigDecimal valor) throws ContaException {
+    public void transferir(fundamentals.ContaBancaria destino, BigDecimal valor) throws ContaException {
         // TODO: Usar métodos que podem lançar exceptions
         // Pensar em: o que fazer se sacar funciona mas depositar falha?
     }
 }
 
 // Classe de uso
-public class ServicoBancario {
+public class fundamentals.ServicoBancario {
     public void processarTransferencia(String contaOrigem, String contaDestino, BigDecimal valor) {
         try {
             // TODO: Implementar com tratamento adequado
             // Diferentes tipos de exception = diferentes tratamentos
             
-        } catch (SaldoInsuficienteException e) {
+        } catch (fundamentals.SaldoInsuficienteException e) {
             // TODO: Tratamento específico - oferecer opções
             
         } catch (ContaBloqueadaException e) {
@@ -458,7 +458,7 @@ public class CacheInteligente<K, V> {
 public class ServicoVendas {
     
     // TODO: Combinar todos os conceitos:
-    // - Repository pattern
+    // - ObjectOrientedProgramming.Repository pattern
     // - Exception handling robusto
     // - Business rules com Strategy
     // - Events para desacoplamento

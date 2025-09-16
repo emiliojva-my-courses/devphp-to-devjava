@@ -156,7 +156,7 @@ public record UserDTO(Long id, String name) {}
 ## 🔄 9. SPRING REQUEST FLOW
 
 ```
-HTTP Request → Tomcat → DispatcherServlet → Controller → Service → Repository → Database
+HTTP Request → Tomcat → DispatcherServlet → Controller → Service → ObjectOrientedProgramming.Repository → Database
                                                               ↓
                                                           Response → JSON
 ```
@@ -456,7 +456,7 @@ Recreate in Java/Spring Boot a CRUD you’ve already built in Laravel (e.g., Blo
 - [ ] Entity with 3+ attributes (like a Model)
 - [ ] Controller with GET, POST, PUT, DELETE
 - [ ] Basic validations (like FormRequest)
-- [ ] Repository with 1 custom method
+- [ ] ObjectOrientedProgramming.Repository with 1 custom method
 - [ ] Manual test via Postman
 
 **Time:** 7 days

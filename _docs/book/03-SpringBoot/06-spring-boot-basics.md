@@ -296,7 +296,7 @@ public record UpdatePostDTO(
 
 ## 🗄️ **5. CRIANDO O REPOSITORY**
 
-### **Laravel Repository Pattern (opcional):**
+### **Laravel ObjectOrientedProgramming.Repository Pattern (opcional):**
 ```php
 // app/Repositories/PostRepository.php
 class PostRepository
@@ -318,7 +318,7 @@ class PostRepository
 }
 ```
 
-### **Spring Boot Repository:**
+### **Spring Boot ObjectOrientedProgramming.Repository:**
 ```java
 // src/main/java/com/dojo/blogapi/repository/PostRepository.java
 package com.dojo.blogapi.repository;
@@ -327,12 +327,12 @@ import com.dojo.blogapi.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.ObjectOrientedProgramming.Repository;
 
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+@ObjectOrientedProgramming.Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
     
     // Query methods (Spring gera automaticamente)
@@ -630,7 +630,7 @@ Certifique-se de que implementou:
 
 - [ ] **Entity** com validações e timestamps
 - [ ] **DTOs** para request e response
-- [ ] **Repository** com query methods
+- [ ] **ObjectOrientedProgramming.Repository** com query methods
 - [ ] **Service** com lógica de negócio
 - [ ] **Controller** com todos os endpoints CRUD
 - [ ] **Configuração** de banco de dados
@@ -656,7 +656,7 @@ Estenda a aplicação com:
 
 Agora que você tem uma aplicação funcional, vamos aos desafios práticos:
 
-**Próximo:** [Capítulo 07: Desafios e Recursos](./07-challenge-resources.md)
+**Próximo:** [Capítulo 07: Desafios e Recursos](../fundamentals/07-challenge-resources.md)
 
 ---
 
@@ -666,7 +666,7 @@ Agora que você tem uma aplicação funcional, vamos aos desafios práticos:
 
 ✅ **Estrutura similar** mas mais organizada em camadas  
 ✅ **DTOs obrigatórios** = APIs mais seguras  
-✅ **Repository pattern** nativo e poderoso  
+✅ **ObjectOrientedProgramming.Repository pattern** nativo e poderoso  
 ✅ **Validações integradas** com Bean Validation  
 ✅ **Zero configuração** para funcionalidades básicas  
 

@@ -88,10 +88,10 @@ devphp-to-devjava/
 └── src/                               # Código + conceitos integrados
     ├── HelloWorld.java                 # Primeiro exemplo
     ├── Main.java                       # Template inicial
-    ├── PrimitiveTypes.java             # Tipos básicos
-    ├── CollectionsExample.java         # Collections vs PHP arrays
-    ├── OOPAdvancedExample.java         # OOP com analogias Laravel
-    ├── ExceptionHandlingExample.java   # Exception handling
+    ├── fundamentals.exercises.PrimitiveTypes.java             # Tipos básicos
+    ├── fundamentals.CollectionsExample.java         # Collections vs PHP arrays
+    ├── ObjectOrientedProgramming.OOPAdvancedExample.java         # OOP com analogias Laravel
+    ├── fundamentals.ExceptionHandlingExample.java   # Exception handling
     └── concepts/                       # 🆕 GUIAS CONCEITUAIS
         ├── README.md                   # Índice de navegação
         ├── 01-Collections-Conceitual.md
@@ -259,7 +259,7 @@ public record UserDTO(Long id, String name) {}
 ## 🔄 **9. FLUXO COMPLETO REQUISIÇÃO SPRING**
 
 ```
-HTTP Request → Tomcat → DispatcherServlet → Controller → Service → Repository → Database
+HTTP Request → Tomcat → DispatcherServlet → Controller → Service → ObjectOrientedProgramming.Repository → Database
                                                               ↓
                                                           Response → JSON
 ```
@@ -559,7 +559,7 @@ Recrie em Java/Spring Boot um CRUD que você já fez em Laravel (ex: Blog, Todo 
 - [ ] Entidade com 3+ atributos (como um Model)
 - [ ] Controller com GET, POST, PUT, DELETE
 - [ ] Validações básicas (como FormRequest)
-- [ ] Repository com 1 método custom
+- [ ] ObjectOrientedProgramming.Repository com 1 método custom
 - [ ] Teste manual via Postman
 
 **Tempo:** 7 dias

@@ -21,7 +21,7 @@ Escolha um projeto Laravel que você já desenvolveu (blog, e-commerce, task man
 #### **🗃️ Camada de Dados:**
 - [ ] **Pelo menos 3 entidades** com relacionamentos
 - [ ] **DTOs** para todas as operações (nunca expor entities)
-- [ ] **Repository customizado** com pelo menos 2 query methods
+- [ ] **ObjectOrientedProgramming.Repository customizado** com pelo menos 2 query methods
 - [ ] **Validações** em DTOs com Bean Validation
 - [ ] **Timestamps** automáticos (createdAt, updatedAt)
 
