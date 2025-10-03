@@ -54,7 +54,7 @@ Estruturas de dados Java equivalentes aos arrays PHP e Collections Laravel.
 Framework completo com analogias diretas ao Laravel.
 
 #### 📚 **Capítulos Disponíveis:**
-- [📖 **06: Spring Boot Essencial**](03-SpringBoot/06-spring-boot-basics.md) ✅
+- [📖 **06: Spring Boot Essencial**](../zothers/03-SpringBoot/06-spring-boot-basics.md) ✅
 
 #### � **Capítulos Planejados:**
 - [📖 **Controllers vs Laravel Controllers**] *Em desenvolvimento*
@@ -129,9 +129,9 @@ Framework completo com analogias diretas ao Laravel.
 ## 📊 **ACOMPANHAMENTO DO PROGRESSO**
 
 ### 📝 **Arquivos de Monitoramento:**
-- [`_docs/prompts/learning-progress.md`](../prompts/learning-progress.md) → Status detalhado
-- [`_docs/prompts/conversation-summary.md`](../prompts/conversation-summary.md) → Resumo da jornada
-- [`_docs/prompts/next-exercises.md`](../prompts/next-exercises.md) → Próximos exercícios
+- [`_docs/prompts/learning-progress.md`](../zothers/prompts/learning-progress.md) → Status detalhado
+- [`_docs/prompts/conversation-summary.md`](../zothers/prompts/conversation-summary.md) → Resumo da jornada
+- [`_docs/prompts/next-exercises.md`](../zothers/prompts/next-exercises.md) → Próximos exercícios
 
 ### 🎯 **Meta Final:**
 **Primeira API REST Spring Boot funcional em 2 semanas**
@@ -155,13 +155,13 @@ devphp-to-devjava/
 │   │   ├── 02-tools-infrastructure.md
 │   │   ├── 03-data-layer.md
 │   │   ├── 04-architecture.md
-│   │   ├── 05-java-fundamentals.md
+│   │   ├── 05-java-legacy.fundamentals.md
 │   │   ├── 06-spring-boot-basics.md
 │   │   └── 07-challenge-resources.md
 │   ├── HowToRunJavaOnWindows11WSL2.md
 │   └── JavaLearningDojo.md
 └── src/                               # Código de exemplo
-    ├── HelloWorld.java
-    ├── Main.java
-    └── fundamentals.exercises.PrimitiveTypes.java
+    ├── main.java.fundamentals.cap01.HelloWorld.java
+    ├── main.java.zothers.exercises.Main.java
+    └── exercises.main.java.zothers.fundamentals.PrimitiveTypes.java
 ```

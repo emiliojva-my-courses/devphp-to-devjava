@@ -1,624 +1,394 @@
-# 🐉 **ECOSSISTEMA JAVA: A CAVERNA DO DRAGÃO**
-
-**Roadmap** de um desenvolvedor PHP (Laravel) para dominar Java com Spring Boot.
-
-> **Se você domina Laravel, este guia vai te ajudar a aprender Java traçando analogias diretas com o que você já conhece. Cada seção destaca o conceito equivalente no Laravel, para que você possa rapidamente mapear seu conhecimento e identificar as principais diferenças.**
+# 🐉 DO LARAVEL AO SPRING BOOT
+## *Uma Jornada Pragmática de Transição de Ecossistemas*
 
 ---
 
-## 📚 **GUIA DE ESTUDO ESTRUTURADO**
+## 📖 **SOBRE ESTA WIKI**
 
-Este guia foi dividido em capítulos organizados para facilitar seu aprendizado progressivo:
-
-### 🏗️ **Parte I: Fundamentos**
-- [x] [📖 **Capítulo 00: Configuração do Ambiente**](./_docs/book/00-environment-setup.md)
-- [x] [📖 **Capítulo 01: Ecossistema Java**](./_docs/book/01-java-ecosystem.md)
-- [x] [📖 **Capítulo 02: Ferramentas e Infraestrutura**](./_docs/book/02-tools-infrastructure.md)
-
-### ⚔️ **Parte II: Conhecimento Técnico**
-- [x] [📖 **Capítulo 03: Camada de Dados**](./_docs/book/03-data-layer.md)
-- [x] [📖 **Capítulo 04: Fundamentos Java**](./_docs/book/04-java-fundamentals.md)
-- [x] [📖 **Capítulo 05: Arquitetura e Fluxo**](./_docs/book/05-architecture.md)
-
-### 🌱 **Parte III: Spring Boot na Prática**
-- [x] [📖 **Capítulo 06: Spring Boot Essencial**](./_docs/book/06-spring-boot-basics.md)
-- [x] [📖 **Capítulo 07: Desafio Prático e Recursos**](./_docs/book/07-challenge-resources.md)
+Esta não é apenas uma documentação técnica. É um **diário estruturado de aprendizado** que combina:
+- **Pragmatismo:** Foco no que você vai usar no projeto real
+- **Neurociência:** Técnicas comprovadas de retenção de conhecimento
+- **Filosofia:** Estoicismo aplicado ao aprendizado técnico
+- **Método Socrático:** Perguntas que constroem compreensão profunda
 
 ---
 
-## 🎯 **CHECKLIST RÁPIDO**
+## 🗺️ **NAVEGAÇÃO RÁPIDA**
 
-Antes de começar, certifique-se de que entende estes conceitos:
-
-- [ ] JDK ≠ JRE ≠ JVM (como engine PHP vs extensões vs ferramentas de dev)
-- [ ] Maven/Gradle gerenciam dependências (como Composer)
-- [ ] Tomcat é o servidor web embedado (como PHP-FPM ou built-in server)
-- [ ] JPA é spec, Hibernate é implementation (como contrato Eloquent vs classe)
-- [ ] Entity ≠ DTO (banco ≠ API resource)
-- [ ] Java SE é suficiente para Spring Boot (como PHP core é suficiente para Laravel)
-
----
-
-## 🏮 **SABEDORIA INICIAL DO SENSEI**
-
-O ecossistema Java parece complexo porque **é robusto**. Cada camada resolve um problema específico de enterprise applications.
-
-**Não decore - compreenda:**
-- JDK é seu kit de ferramentas (como suas ferramentas de dev PHP)
-- Maven é seu gestor de pacotes (como Composer)
-- Tomcat é seu servidor (como PHP-FPM)
-- JPA é sua interface de banco (como Eloquent)
-- Spring é o framework que une tudo (como Laravel)
+| Seção | Conteúdo | Status |
+|-------|----------|--------|
+| [📜 Prefácio](#-prefácio) | Por que este livro existe | ✅ |
+| [🧭 Como Usar](#-como-usar-esta-wiki) | Metodologias de estudo | ✅ |
+| [🗺️ Roadmap](#️-roadmap-da-jornada) | Visão geral das fases | ✅ |
+| [📚 Capítulos](#-índice-de-capítulos) | Conteúdo técnico | 🚧 |
+| [📊 Progresso](#-acompanhamento) | Seu checkpoint atual | 🚧 |
+| [🔗 Recursos](#-recursos-externos) | Links e referências | ✅ |
 
 ---
 
-## 🎓 **COMO USAR ESTE GUIA**
+## 📜 **PREFÁCIO**
 
-1. **Leia sequencialmente** - Cada capítulo constrói sobre o anterior
-2. **Pratique com analogias** - Compare cada conceito com Laravel
-3. **Não pule o ambiente** - Configure tudo antes de continuar
-4. **Faça o desafio** - A prática consolida o aprendizado
-5. **Volte quando necessário** - Use como referência
+### **O Dilema do Dev PHP em Terra Java**
+
+Você domina Laravel. Conhece Eloquent como a palma da mão. Já construiu APIs REST, implementou autenticação, otimizou queries N+1. **Você é produtivo.**
+
+Então te passam um projeto Java/Spring Boot legado. E de repente:
+- Onde está meu `composer require`? (Maven? Gradle?)
+- Por que preciso compilar? (PHP é interpretado!)
+- O que é JDK vs JRE vs JVM? (No PHP eu só instalo e roda!)
+- Onde ficam meus arrays associativos? (HashMap? Que isso?)
+
+**Este livro existe para traduzir seu conhecimento Laravel para o ecossistema Java.**
+
+### **Por Que Esta Abordagem é Diferente?**
+
+#### ❌ **O que este livro NÃO é:**
+- Tutorial genérico "Java para iniciantes"
+- Documentação técnica seca
+- Curso vendido com promessas mirabolantes
+- Comparação depreciativa ("X é melhor que Y")
+
+#### ✅ **O que este livro É:**
+- **Ponte cognitiva:** Laravel → Spring Boot com analogias precisas
+- **Pragmático:** Foco no que você vai usar NO PROJETO REAL
+- **Científico:** Metodologias de neurociência aplicadas
+- **Honesto:** "Isto é confuso mesmo, vamos dissecar junto"
+
+### **Contexto Real: Seu Projeto**
+
+Este livro foi escrito para **seu cenário específico:**
+- ✅ Desenvolvedor Laravel experiente
+- ✅ Projeto legado Spring Boot com queries plain (JDBC)
+- ✅ PostgreSQL (não MySQL/Oracle genéricos)
+- ✅ Arquitetura MVC simplória (sem microservices complexos)
+- ✅ Prazo real: contribuir em ~6 semanas
+
+**Não vamos perder tempo com teoria que você não vai usar esta sprint.**
 
 ---
 
-🥋 **BOM ESTUDO, DISCÍPULO!** O dojo aguarda seu progresso! 🐉
+## 🧭 **COMO USAR ESTA WIKI**
+
+### **🧠 Metodologias Aplicadas**
+
+#### 1️⃣ **Estoicismo Técnico**
+> *"Controle o que está em seu poder: código e prática. Não controla: velocidade de aprendizado ou comparações."*
+
+**Na prática:**
+- ✅ Foque em **entender**, não em "ser rápido"
+- ✅ Erros são **dados para análise**, não fracassos
+- ✅ Compare-se **com você de ontem**, não com sêniores de 10 anos
+
+#### 2️⃣ **KISS (Keep It Simple, Stupid)**
+> *"Um conceito por sessão. Código mínimo viável. Sem over-engineering."*
+
+**Na prática:**
+- ✅ Sessões de 25min (Pomodoro)
+- ✅ 1 conceito = 1 exemplo mínimo funcional
+- ✅ Se não usa no projeto esta semana, **não estude ainda**
+
+#### 3️⃣ **Neurociência do Aprendizado**
+> *"Seu cérebro precisa de repetição espaçada, não de maratona."*
+
+**Na prática:**
+- ✅ **Spaced Repetition:** Revise em D+1, D+3, D+7
+- ✅ **Interleaving:** Alterne teoria → prática → comparação
+- ✅ **Retrieval Practice:** Explique ANTES de consultar
+- ✅ **Sleep:** 7h+ de sono (consolidação de memória)
+
+#### 4️⃣ **Método Socrático**
+> *"Perguntas que te fazem pensar, não respostas prontas."*
+
+**Na prática:**
+- ✅ Cada capítulo começa com **perguntas que VOCÊ responde**
+- ✅ Código vem **depois** da sua tentativa
+- ✅ Compare sua resposta com a solução (metacognição)
+
+#### 5️⃣ **Técnica Feynman**
+> *"Se não consegue explicar simples, não entendeu ainda."*
+
+**Na prática:**
+- ✅ Explique em voz alta (rubber duck)
+- ✅ Escreva exemplo de memória (sem copiar)
+- ✅ Ensine para alguém (júnior, colega, pet)
 
 ---
 
-## 📂 **ESTRUTURA COMPLETA DO PROJETO**
+### **⏱️ Ciclo de Estudo Ideal (2h/dia)**
 
 ```
-devphp-to-devjava/
-├── README.md                           # Este arquivo (índice)
-├── README-EN-US.md                     # Versão em inglês
-├── PLANO-REVISAO.md                    # Plano personalizado de estudos
-├── _docs/
-│   ├── book/                          # Livro estruturado
-│   │   ├── 00-environment-setup.md    ✅
-│   │   ├── 01-java-ecosystem.md       ✅
-│   │   ├── 02-tools-infrastructure.md ✅
-│   │   ├── 03-data-layer.md           ✅
-│   │   ├── 04-java-fundamentals.md    ✅
-│   │   ├── 05-architecture.md         ✅
-│   │   ├── 06-spring-boot-basics.md   ✅
-│   │   └── 07-challenge-resources.md  ✅
-│   ├── HowToRunJavaOnWindows11WSL2.md
-│   └── JavaLearningDojo.md
-└── src/                               # Código + conceitos integrados
-    ├── HelloWorld.java                 # Primeiro exemplo
-    ├── Main.java                       # Template inicial
-    ├── fundamentals.exercises.PrimitiveTypes.java             # Tipos básicos
-    ├── fundamentals.CollectionsExample.java         # Collections vs PHP arrays
-    ├── ObjectOrientedProgramming.OOPAdvancedExample.java         # OOP com analogias Laravel
-    ├── fundamentals.ExceptionHandlingExample.java   # Exception handling
-    └── concepts/                       # 🆕 GUIAS CONCEITUAIS
-        ├── README.md                   # Índice de navegação
-        ├── 01-Collections-Conceitual.md
-        ├── 02-OOP-Conceitual.md
-        ├── 03-Exception-Design.md
-        └── 04-Exercicios-Progressivos.md
+┌─────────────────────────────────────────────┐
+│  SESSÃO 1: TEORIA (25min)                  │
+├─────────────────────────────────────────────┤
+│  • Leia 1 conceito do capítulo              │
+│  • Responda perguntas socráticas (sem cola) │
+│  • Compare com Laravel (anote diferenças)   │
+└─────────────────────────────────────────────┘
+                    ↓ (5min pausa)
+┌─────────────────────────────────────────────┐
+│  SESSÃO 2: PRÁTICA (25min)                 │
+├─────────────────────────────────────────────┤
+│  • Implemente o código do conceito          │
+│  • Execute e observe erros (debugging)      │
+│  • Refatore até funcionar                   │
+└─────────────────────────────────────────────┘
+                    ↓ (5min pausa)
+┌─────────────────────────────────────────────┐
+│  SESSÃO 3: RETRIEVAL (25min)               │
+├─────────────────────────────────────────────┤
+│  • Explique em voz alta o que aprendeu      │
+│  • Reescreva exemplo de memória (sem copiar)│
+│  • Teste com variação do exercício          │
+└─────────────────────────────────────────────┘
+                    ↓ (5min pausa)
+┌─────────────────────────────────────────────┐
+│  SESSÃO 4: CONSOLIDAÇÃO (25min)            │
+├─────────────────────────────────────────────┤
+│  • Anotação no learning-log.md              │
+│  • Crie 1 pergunta para revisar amanhã     │
+│  • Defina próximo checkpoint                │
+└─────────────────────────────────────────────┘
+```
+
+**💡 Dica:** Use [Pomofocus.io](https://pomofocus.io) ou app similar para timer.
+
+---
+
+### **📊 Sistema de Checkpoints Estoicos**
+
+#### **Autoavaliação Semanal (Sextas-feiras):**
+```
+┌─────────────────────────────────────────────┐
+│  ✅ CHECKPOINT: Semana X                    │
+├─────────────────────────────────────────────┤
+│  [ ] Consigo explicar para júnior?          │
+│  [ ] Reproduzi código de memória?           │
+│  [ ] Entendo o POR QUÊ (não só COMO)?       │
+│  [ ] Consigo adaptar para outra situação?   │
+│  [ ] Anotei dúvidas específicas?            │
+├─────────────────────────────────────────────┤
+│  🎯 Meta da próxima semana: ___________     │
+│  📝 Dúvida para perguntar ao time: ______   │
+└─────────────────────────────────────────────┘
+```
+
+#### **Revisão Espaçada (Spaced Repetition):**
+- **D+1:** Refaça exercício principal
+- **D+3:** Explique conceito em voz alta
+- **D+7:** Revise anotações e corrija erros
+
+---
+
+## 🗺️ **ROADMAP DA JORNADA**
+
+### **Visão Geral: 3 Fases x 8 Semanas**
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  FASE 1: FUNDAMENTOS JDBC (Semanas 1-2)                 │
+│  🎯 Meta: CRUD funcional com queries raw                │
+├─────────────────────────────────────────────────────────┤
+│  ✓ Sintaxe Java vs PHP                                  │
+│  ✓ JDBC puro + PostgreSQL                               │
+│  ✓ PreparedStatement (SQL Injection)                    │
+│  ✓ Transações (commit/rollback)                         │
+│  ✓ Padrão DAO (seu "Repository")                        │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│  FASE 2: SPRING BOOT ESSENCIAL (Semanas 3-5)           │
+│  🎯 Meta: API REST end-to-end funcional                 │
+├─────────────────────────────────────────────────────────┤
+│  ✓ @RestController (rotas)                              │
+│  ✓ @Service + DI (Service Container)                    │
+│  ✓ Bean Validation (Form Requests)                      │
+│  ✓ Exception Handling global                            │
+│  ✓ DTOs (API Resources)                                 │
+└─────────────────────────────────────────────────────────┘
+                          ↓
+┌─────────────────────────────────────────────────────────┐
+│  FASE 3: PROJETO LEGADO (Semanas 6-8)                  │
+│  🎯 Meta: Primeiro PR aceito no projeto                 │
+├─────────────────────────────────────────────────────────┤
+│  ✓ Análise da arquitetura existente                     │
+│  ✓ Padrões e convenções do time                         │
+│  ✓ Refatoração de 1 endpoint (com testes)              │
+│  ✓ Code review + feedback do time                       │
+│  ✓ Documentação do que aprendeu                         │
+└─────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🎁 **VERSÕES DISPONÍVEIS**
+## 📚 **ÍNDICE DE CAPÍTULOS**
 
-- **🇧🇷 Português:** [README.md](./README.md) *(esta página)*
-- **🇺🇸 English:** [README-EN-US.md](./README-EN-US.md) *(para praticar inglês)*
+### **📘 PARTE I: FUNDAMENTOS JDBC**
+*"Domine o SQL antes do ORM" (como você fez com Laravel)*
 
-```
-[SEU CÓDIGO .java] → [COMPILADOR javac] → [BYTECODE .class] → [JVM] → [HARDWARE]
-```
+| # | Capítulo | Analogia Laravel | Status |
+|---|----------|------------------|--------|
+| 00 | [Ambiente: JDK + Maven](./fundamentals/00-environment-setup.md) | `composer install` + PHP | ✅ |
+| 01 | [Sintaxe Java Básica](./fundamentals/01-java-syntax.md) | Tipos, loops, funções PHP | ✅ |
+| 02 | [JDBC: Conexão PostgreSQL](./fundamentals/02-jdbc-basics.md) | `DB::connection()` | 🚧 |
+| 03 | [CRUD com PreparedStatement](./fundamentals/03-jdbc-crud.md) | `DB::table()->insert()` | 🚧 |
+| 04 | [Padrão DAO](./fundamentals/04-dao-pattern.md) | Repository Pattern | 🚧 |
 
-**Analogia Laravel:**
-- PHP é interpretado linha por linha (Zend Engine), enquanto Java é compilado em bytecode e roda na JVM (Java Virtual Machine).
-- Pense na JVM como o "motor" que executa seu código Java, similar a como o PHP-FPM executa seus scripts PHP.
+### **📗 PARTE II: SPRING BOOT ESSENCIAL**
+*"Framework sem magia - compreenda cada anotação"*
 
----
+| # | Capítulo | Analogia Laravel | Status |
+|---|----------|------------------|--------|
+| 05 | [Controllers REST](./spring/05-controllers.md) | `Route::resource()` | 🚧 |
+| 06 | [Services + DI](./spring/06-services-di.md) | Service Container | 🚧 |
+| 07 | [Bean Validation](./spring/07-validation.md) | Form Requests | 🚧 |
+| 08 | [Exception Handling](./spring/08-exceptions.md) | `Handler.php` | 🚧 |
+| 09 | [DTOs: Request/Response](./spring/09-dtos.md) | API Resources | 🚧 |
 
-## 📦 **2. JDK vs JRE vs JVM**
+### **📕 PARTE III: ARQUITETURA DO LEGADO**
+*"Organize o código que você vai manter"*
 
-| Componente | Função | Analogia Laravel/PHP |
-|------------|---------|---------------------|
-| **JVM** (Java Virtual Machine) | Executa bytecode | PHP-FPM + Zend Engine |
-| **JRE** (Java Runtime Environment) | JVM + Bibliotecas básicas | PHP + extensões básicas |
-| **JDK** (Java Development Kit) | JRE + Ferramentas de desenvolvimento (compilador, debugger) | PHP + Composer + Xdebug |
-
-```bash
-# No seu WSL:
-java -version   # JRE
-javac -version  # JDK (compilador)
-```
-
----
-
-## 🌐 **3. EDITIONS: SE, EE, ME**
-
-| Edição | Foco | Uso Comum |
-|--------|------|-----------|
-| **Java SE** (Standard Edition) | Desktop/Apps básicos | Aplicações Spring Boot (como apps Laravel) |
-| **Java EE** (Enterprise Edition) | Sistemas corporativos | Grandes aplicações corporativas (pense em bancos) |
-| **Java ME** (Micro Edition) | Dispositivos embarcados | IoT, celulares antigos |
-
-**Analogia Laravel:**
-- Java SE é como o PHP core que você usa na maioria dos projetos Laravel.
-- Java EE é como um framework PHP empresarial full-stack com todos os módulos possíveis.
-
-**Spring Boot ≡ Java SE com poderes empresariais**
+| # | Capítulo | Objetivo | Status |
+|---|----------|----------|--------|
+| 10 | [Análise de Arquitetura](./architecture/10-analysis.md) | Mapear camadas MVC | 🚧 |
+| 11 | [Padrões do Time](./architecture/11-conventions.md) | Code style + estrutura | 🚧 |
+| 12 | [Primeiro PR](./architecture/12-first-pr.md) | Contribuir com segurança | 🚧 |
 
 ---
 
-## 🐘 **4. TOMCAT vs APACHE**
+## 🎯 **EXERCÍCIOS PROGRESSIVOS**
 
-| Servidor | Função | Analogia Laravel/PHP |
-|----------|---------|---------------------|
-| **Tomcat** | Servlet Container | PHP-FPM + Nginx (executa o código da sua app) |
-| **Jetty** | Servlet Container leve | PHP built-in server (para dev) |
-| **WildFly** | Full Java EE Server | Apache + PHP + todos os módulos |
-
-**Spring Boot:** Usa Tomcat **embedado** - você não instala separadamente! Assim como o servidor built-in do Laravel para desenvolvimento, mas também para produção.
-
----
-
-## 📦 **5. MAVEN vs GRADLE**
-
-### **Maven (XML) ≈ Composer (PHP)**
-```xml
-<!-- pom.xml -->
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-        <version>3.2.0</version>
-    </dependency>
-</dependencies>
-```
-
-### **Gradle (Kotlin/Groovy) ≈ Composer + Make**
-```kotlin
-// build.gradle.kts
-dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web:3.2.0")
-}
-```
-
-**Analogia Laravel:**
-- Maven é como o Composer para PHP: gerencia dependências e estrutura do projeto.
-- Gradle é como Composer + uma ferramenta de build (como Make ou Gulp).
-
-**Dica:** Comece com **Maven** (mais documentação, mais fácil para iniciantes).
-
----
-
-## 🧩 **6. ESPECIFICAÇÕES (JSRs)**
-
-Java é governado por **JSRs** (Java Specification Requests):
-
-| Especificação | Função | Analogia Laravel |
-|---------------|---------|------------------|
-| **JPA** (JSR 338) | Persistência de dados | Eloquent ORM |
-| **Servlet** (JSR 369) | Web applications | Rotas/Controllers |
-| **Bean Validation** (JSR 380) | Validação de dados | Form Requests |
-| **CDI** (JSR 365) | Injeção de dependência | Service Container |
-
----
-
-## 🗃️ **7. ORM: JPA vs HIBERNATE**
-
-### **JPA (Specification) ≈ Interface (contrato do Eloquent)**
+### **🥉 NÍVEL BRONZE: JDBC Puro (Semanas 1-2)**
 ```java
-@Entity
-public class User {
-    @Id
-    @GeneratedValue
-    private Long id;
-}
+// ✅ Exercício 1: Hello PostgreSQL
+// Conecte e liste todas as tabelas do schema public
+
+// ✅ Exercício 2: Primeiro SELECT
+// Busque 10 registros de 1 tabela e imprima no console
+
+// ✅ Exercício 3: INSERT Seguro
+// Adicione 1 registro usando PreparedStatement
+
+// ✅ Exercício 4: UPDATE Condicional
+// Atualize campo WHERE id = X
+
+// ✅ Exercício 5: Transação Atômica
+// INSERT + UPDATE em transação (commit/rollback)
 ```
 
-### **Hibernate (Implementation) ≈ Classe concreta**
+### **🥈 NÍVEL PRATA: Spring Boot (Semanas 3-5)**
 ```java
-// Hibernate é a implementação mais popular da JPA
-// Spring Boot usa Hibernate por padrão
+// ✅ Exercício 6: GET /users
+// Endpoint que retorna JSON de lista de usuários
+
+// ✅ Exercício 7: POST /users
+// Crie usuário com validação de email
+
+// ✅ Exercício 8: PUT /users/{id}
+// Atualize 1 campo com validação
+
+// ✅ Exercício 9: DELETE Lógico
+// Soft delete (campo deleted_at como Laravel)
+
+// ✅ Exercício 10: Exception Customizada
+// Trate "User not found" com HTTP 404
 ```
 
-**Analogia Laravel:**
-- JPA é como a interface do Eloquent ORM (o contrato), e Hibernate é como a implementação real do Eloquent.
-
-**Outras implementações:** EclipseLink, OpenJPA
-
----
-
-## 📨 **8. DTO (Data Transfer Object)**
-
+### **🥇 NÍVEL OURO: Projeto Real (Semanas 6-8)**
 ```java
-// ENTITY (Banco de dados)
-@Entity
-public class User {
-    @Id
-    private Long id;
-    private String password; // ← Dado sensível!
-}
+// ✅ Exercício 11: Clone Endpoint do Legado
+// Reproduza 1 endpoint existente do zero
 
-// DTO (API Response)
-public record UserDTO(Long id, String name) {}
-// ≈ class com getters, equals, hashCode
-```
+// ✅ Exercício 12: Validação BR
+// Valide CPF, CEP, telefone brasileiro
 
-**Analogia Laravel:**
-- Entity = Eloquent Model (banco de dados)
-- DTO = Resource/Transformer (resposta da API)
+// ✅ Exercício 13: Paginação
+// Implemente LIMIT/OFFSET vs Laravel paginate()
 
-**Por que usar?**
-- Segurança (esconder campos sensíveis)
-- Performance (menos dados trafegados)
-- Desacoplamento (mudar entidade ≠ mudar API)
+// ✅ Exercício 14: DTO com Esconder Campos
+// Crie DTO que oculta senha (makeHidden Laravel)
 
----
-
-## 🔄 **9. FLUXO COMPLETO REQUISIÇÃO SPRING**
-
-```
-HTTP Request → Tomcat → DispatcherServlet → Controller → Service → ObjectOrientedProgramming.Repository → Database
-                                                              ↓
-                                                          Response → JSON
-```
-
-**Analogia Laravel:**
-- Request → Nginx/Apache → index.php → Route → Controller → Service → Model → Database
-
----
-
-## 📊 **10. TECNOLOGIAS COMUNS NO ECOSSISTEMA**
-
-| Camada | Tecnologias Comuns | Analogia Laravel |
-|--------|---------------------|-----------------|
-| **Build** | Maven, Gradle | Composer |
-| **Web** | Spring MVC, Jersey | Routing, Controllers |
-| **Data** | JPA/Hibernate, JDBC, Spring Data | Eloquent ORM |
-| **Security** | Spring Security, JWT | Laravel Auth, Sanctum |
-| **Testing** | JUnit, Mockito, Testcontainers | PHPUnit, Mockery |
-| **Deploy** | Docker, Kubernetes, JAR → Cloud | Docker, Forge |
-
----
-
-## 🎯 **11. CHECKLIST DO DISCÍPULO**
-
-Entenda estes conceitos antes de prosseguir:
-
-- [ ] JDK ≠ JRE ≠ JVM (como engine PHP vs extensões vs ferramentas de dev)
-- [ ] Maven/Gradle gerenciam dependências (como Composer)
-- [ ] Tomcat é o servidor web embedado (como PHP-FPM ou built-in server)
-- [ ] JPA é spec, Hibernate é implementation (como contrato Eloquent vs classe)
-- [ ] Entity ≠ DTO (banco ≠ API resource)
-- [ ] Java SE é suficiente para Spring Boot (como PHP core é suficiente para Laravel)
-
----
-
-## 🏮 **SABEDORIA FINAL DO SENSEI**
-
-O ecossistema Java parece complexo porque **é robusto**. Cada camada resolve um problema específico de enterprise applications.
-
-**Não decore - compreenda:**
-- JDK é seu kit de ferramentas (como suas ferramentas de dev PHP)
-- Maven é seu gestor de pacotes (como Composer)
-- Tomcat é seu servidor (como PHP-FPM)
-- JPA é sua interface de banco (como Eloquent)
-- Spring é o framework que une tudo (como Laravel)
-
---- 
-
-🥋 **COM PRAZER, DISCÍPULO!** Eis o **Class-01: Transcendência do Laravel para Spring Boot** - sua apostila para dominar a arte Java.
-
----
-
-# 🐉 Transcendência do Laravel para Spring Boot
-**Data:** ${HOJE}  
-**Sensei:** Java Spring Boot  
-**Discípulo:** ${SEU_NOME}
-
----
-
-## 📖 ÍNDICE
-1. Filosofia da Transcendência
-2. Mapeamento Mental: Laravel → Spring Boot
-3. Ambiente do Samurai (Setup)
-4. Java Puro: Fundamentos Essenciais
-5. Spring Boot: A Magia que Funciona
-6. Desafio do Dojo
-7. Recursos do Aprendizado
-
----
-
-## 1. 🧠 FILOSOFIA DA TRANSCENDÊNCIA
-
-### **Mudança de Mentalidade**
-```php
-// LARAVEL: Dinâmico, ágil, flexível
-$user = new User();
-$user->name = 'João'; // Tipagem fraca
-```
-
-```java
-// SPRING: Estruturado, tipado, robusto
-User user = new User();
-user.setName("João"); // Tipagem forte
-```
-
-### **Princípios do Caminho Java**
-- ✅ **Tipagem é proteção** (não obstrução)
-- ✅ **Verbosidade é clareza** (não burocracia)
-- ✅ **Compilação é prevenção** (não lentidão)
-
----
-
-## 2. 🗺️ MAPEAMENTO MENTAL
-
-| Laravel (PHP) | Spring Boot (Java) | Diferença Chave |
-|---------------|-------------------|-----------------|
-| `<?php` | `public class` | Arquivo = Classe |
-| `$var` | `String var` | Sem $, com tipo |
-| `__construct()` | `ClassName()` | Nome da classe |
-| `array()` | `ArrayList<>()` | Coleção tipada |
-| `->` | `.` | Acesso a métodos |
-| `composer.json` | `pom.xml` | Gerenciador de dependências |
-| `Artisan` | `Spring Boot CLI` | Ferramentas CLI |
-| `Eloquent` | `Spring Data JPA` | ORM |
-| `Blade` | `Thymeleaf` | Template Engine |
-| `Middleware` | `Interceptor/Filter` | Camada de requisição |
-
----
-
-## 3. 🛠️ AMBIENTE DO SAMURAI
-
-### **Configuração Windows 11 + WSL2**
-```bash
-# Verificar instalações
-java -version        # JDK 21+
-mvn --version        # Maven 3.9+
-docker --version     # Docker 24+
-
-# Estrutura de pastas
-~/java-projects/
-├── class-01/
-├── labs/
-└── docker-compose.yml
-```
-
-### **Docker Compose para Dev**
-```yaml
-version: '3.8'
-services:
-  postgres:
-    image: postgres:15
-    environment:
-      POSTGRES_DB: dojo
-      POSTGRES_USER: samurai
-      POSTGRES_PASSWORD: secret
-    ports:
-      - "5432:5432"
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
+// ✅ Exercício 15: Documentação
+// Documente 1 fluxo completo (Controller → DAO → DB)
 ```
 
 ---
 
-## 4. ⚔️ JAVA PURO: FUNDAMENTOS ESSENCIAIS
+## 📊 **ACOMPANHAMENTO**
 
-### **4.1 Tipos e Variáveis**
-```java
-// Tipos primitivos (não objetos)
-int idade = 30;
-double preco = 29.99;
-boolean ativo = true;
-
-// Objetos (classes wrapper)
-Integer idadeObj = 30;
-String nome = "João";
-List<String> emails = new ArrayList<>();
+### **Arquivos de Progresso:**
+```
+_docs/progress/
+├── learning-log.md          # Diário de bordo diário
+├── spaced-repetition.md     # Agenda de revisões
+├── socratic-answers.md      # Suas respostas às perguntas
+└── weekly-checkpoints.md    # Autoavaliação semanal
 ```
 
-### **Analogia Laravel:**
-- Primitivos são como int, float, bool do PHP, mas Java é sempre explícito.
-- Objetos são como classes do PHP, mas com tipagem rigorosa.
+### **Template: learning-log.md**
+```markdown
+## Data: YYYY-MM-DD
 
-### **4.2 Estruturas de Controle**
-```java
-// If/Else (diferente do PHP)
-if (idade >= 18) {
-    System.out.println("Maior de idade");
-} else {
-    System.out.println("Menor de idade");
-}
+### ⏱️ Sessões Hoje:
+- [ ] Pomodoro 1: _____________________
+- [ ] Pomodoro 2: _____________________
 
-// For loop (diferente do foreach PHP)
-for (int i = 0; i < 10; i++) {
-    System.out.println(i);
-}
+### 💡 Aprendi:
+-
 
-// ForEach moderno
-List<String> nomes = List.of("Ana", "João");
-for (String nome : nomes) {
-    System.out.println(nome);
-}
-```
+### ❓ Dúvidas:
+-
 
-### **4.3 Classes e Objetos**
-```java
-public class User {
-    // Atributos privados (encapsulamento)
-    private String name;
-    private List<String> emails;
-    
-    // Construtor (diferente do __construct)
-    public User(String name) {
-        this.name = name;
-        this.emails = new ArrayList<>();
-    }
-    
-    // Métodos públicos (controle de acesso)
-    public void addEmail(String email) {
-        if (email != null && email.contains("@")) {
-            emails.add(email);
-        }
-    }
-    
-    // Getters (diferente de propriedades públicas)
-    public String getName() { return name; }
-    public List<String> getEmails() { return emails; }
-}
-```
+### 🔗 Relação com Laravel:
+-
 
-### **Analogia Laravel:**
-- Classes Java são como classes PHP, mas com visibilidade rigorosa e tipos.
-- Getters/setters são obrigatórios para encapsulamento.
-
-### **4.4 Collections e Streams**
-```java
-// List vs Array
-String[] array = {"a", "b"}; // Array fixo
-List<String> list = new ArrayList<>(); // Lista dinâmica
-
-// Stream API (como Laravel Collections)
-List<String> filtrados = list.stream()
-    .filter(nome -> nome.startsWith("A"))
-    .sorted()
-    .collect(Collectors.toList());
+### 🎯 Amanhã:
+-
 ```
 
 ---
 
-## 5. 🌱 SPRING BOOT: A MAGIA QUE FUNCIONA
+## 🔗 **RECURSOS EXTERNOS**
 
-### **5.1 Estrutura de Projeto**
-```
-src/main/java/com/dojo/
-├── Application.java
-├── controller/
-├── entity/
-├── repository/
-├── service/
-└── dto/
-```
+### **📚 Documentação Oficial:**
+- [Java SE Docs](https://docs.oracle.com/en/java/javase/)
+- [Spring Boot Docs](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+- [PostgreSQL JDBC Driver](https://jdbc.postgresql.org/documentation/)
 
-**Analogia Laravel:**
-- `controller/` = `app/Http/Controllers/`
-- `entity/` = `app/Models/`
-- `repository/` = `app/Repositories/` (se você usa)
-- `service/` = `app/Services/`
-- `dto/` = `app/Http/Resources/` ou Transformers
+### **🎥 Canais Recomendados:**
+- [Amigoscode](https://www.youtube.com/@amigoscode) - Spring Boot prático
+- [Java Brains](https://www.youtube.com/@Java.Brains) - Conceitos detalhados
 
-### **5.2 Controller Básico**
-```java
-@RestController // ≈ Laravel Controller
-@RequestMapping("/api/users")
-public class UserController {
-
-    @Autowired // ≈ Injeção de dependência
-    private UserRepository userRepository;
-    
-    @GetMapping // ≈ Route::get()
-    public List<User> getAll() {
-        return userRepository.findAll(); // ≈ User::all()
-    }
-    
-    @PostMapping
-    public User create(@RequestBody User user) {
-        return userRepository.save(user); // ≈ User::create()
-    }
-}
-```
-
-### **5.3 Entidade JPA**
-```java
-@Entity // ≈ Eloquent Model
-@Table(name = "users")
-public class User {
-    @Id // ≈ $primaryKey
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @Column(nullable = false) // ≈ $fillable
-    private String name;
-    
-    // Getters e Setters
-}
-```
+### **📖 Livros (Opcional):**
+- *Effective Java* (Joshua Bloch) - Boas práticas
+- *Spring Boot in Action* - Guia prático
 
 ---
 
-## 6. 🎯 DESAFIO DO DOJO
+## 🔥 **REGRAS DE OURO**
 
-### **Missão: Transcender um CRUD Laravel**
-Recrie em Java/Spring Boot um CRUD que você já fez em Laravel (ex: Blog, Todo App).
-
-**Requisitos:**
-- [ ] Entidade com 3+ atributos (como um Model)
-- [ ] Controller com GET, POST, PUT, DELETE
-- [ ] Validações básicas (como FormRequest)
-- [ ] ObjectOrientedProgramming.Repository com 1 método custom
-- [ ] Teste manual via Postman
-
-**Tempo:** 7 dias
+1. **🧘 Estoico:** Não compare sua velocidade com outros devs
+2. **💡 KISS:** Se não usa no projeto esta semana, não estude ainda
+3. **🧠 Neurociência:** Durma 7h+ (consolidação de memória)
+4. **🗣️ Socrático:** Sempre pergunte "por quê?" antes de copiar código
+5. **📝 Feynman:** Se não consegue explicar simples, não entendeu
 
 ---
 
-## 7. 📚 RECURSOS DO APRENDIZADO
+## 🚀 **COMECE AGORA**
 
-### **Documentação Oficial**
-- [Spring Boot Docs](https://spring.io/projects/spring-boot)
-- [Java 21 Documentation](https://docs.oracle.com/en/java/javase/21/)
+### **Próximos 3 Passos:**
+1. [ ] Configure JDK + Maven → [Cap. 00](./fundamentals/00-environment-setup.md)
+2. [ ] Converta 3 funções PHP para Java → [Cap. 01](./fundamentals/01-java-syntax.md)
+3. [ ] Conecte PostgreSQL via JDBC → [Cap. 02](./fundamentals/02-jdbc-basics.md)
 
-### **Cursos Recomendados**
-- Spring Boot 3 Tutorial (YouTube)
-- Java Programming Masterclass (Udemy)
+### **Pergunta Socrática Inicial:**
+> *"Qual a MENOR coisa que você pode fazer HOJE para estar 1% mais próximo de contribuir no projeto legado?"*
 
-### **Livros**
-- "Spring Boot in Action"
-- "Effective Java"
+**Responda em:** `_docs/progress/socratic-answers.md`
 
 ---
 
-## 🍵 PALAVRAS FINAIS DO SENSEI
+🥋 **"A jornada de mil linhas de código começa com um `public static void main`"** 🐉
 
-Você deu o passo mais importante: **entender a essência**. Agora a prática levará à maestria.
-
-**Lembre-se:** Cada erro de compilação é um ensinamento. Cada exception é uma oportunidade de crescimento.
-
-O caminho do código é longo, mas você já começou a trilhá-lo com sabedoria.
-
-**Próxima aula:** Spring Data JPA em profundidade - o Eloquent do mundo Java.
-
----
-
-🏮 **ESTA APOSTILA É SEU GUIA. ESTUDE-A, PRATIQUE-A, TRANSCENDA-A.**
-
-**O dojo aguarda seu progresso, discípulo!** 🐉
-
----
-
-## Roadmap dev laravel(php) to java(spring boot) - Suggested Order of Topics
-
-1. Philosophy & Mentality First:
-   Start with the mindset and philosophy of Java vs PHP, to set the stage for the transition.
-2. Environment & Setup:
-   Move the practical setup (JDK, Maven, Docker, folder structure) right after the philosophy, so learners can get ready before diving into concepts.
-3. Java Architecture & Editions:
-   Introduce JVM, JDK/JRE, and Java editions (SE, EE, ME) after the environment, so the technical foundation is clear.
-4. Tools & Build Systems:
-   Present Maven/Gradle, Tomcat, and their analogies, so learners know how projects are built and run.
-5. Specifications & Technologies:
-   Explain JSRs, common technologies, and the ecosystem, so learners see the big picture.
-6. Java Fundamentals:
-   Cover Java syntax, types, control structures, and OOP basics.
-7. Spring Boot Structure & Example:
-   Show how a Spring Boot project is organized and provide a sample controller.
-8. ORM, DTO, and Data Flow:
-   Clarify JPA vs Hibernate, DTOs, and the request/response flow.
-9. Challenge & Resources:
-   End with the CRUD challenge, checklist, and learning resources.
-10. Final Wisdom:
-    Close with motivational advice and next steps.
+**Última atualização:** 2025-10-01  
+**Progresso:** FASE 1 - Capítulo 01/12
